@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Box from "./Box";
 
-export default function GameBoard({ turn, setTurn, player1, player2}) {
+export default function GameBoard({ turn, count, setCount }) {
 
   const [board, setBoard] = useState(['', '', '', '', '', '', '', '', '']);
 
@@ -12,18 +12,16 @@ export default function GameBoard({ turn, setTurn, player1, player2}) {
         key={index}
         index={index}
         turn={turn}
-        setTurn={setTurn}
         board={board}
         setBoard={setBoard}
-        player1={player1}
-        player2={player2}
+        count={count}
+        setCount={setCount}
       />
     );
   })
 
   const resetBoard = () => {
     setBoard(['', '', '', '', '', '', '', '', '']);
-    setTurn(player1)
   }
 
   return (
