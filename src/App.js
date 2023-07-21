@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import GameBoard from "./GameBoard";
+import ScoreCard from "./ScoreCard";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [player1, setPlayer1] = useState({});
+  const [player2, setPlayer2] = useState({});
+  useEffect(() => {
+    setPlayer1({name: 'Amber', score: 0});
+    setPlayer2({name: 'Nathan', score: 0});
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <ScoreCard player={player1}/>
+      <GameBoard />
+      <ScoreCard player={player2}/>
+    </main>
   );
 }
 
