@@ -1,18 +1,14 @@
-export default function Box({ value, setBoard, index, board, setTurn, turn}) {
+export default function Box({ value, setBoard, index, board, setTurn, turn, player1, player2}) {
   const handleClick = () => {
-    let newValue;
-    if (turn === 'player1') {
-      newValue = 'X';
-      setTurn('player2');
-    } else {
-      newValue = 'O';
-      setTurn('player1');
-    }
-
-    console.log(index)
+    console.log(turn)
     const newBoard = [...board]
-    newBoard[index] = newValue;
-    setBoard(newBoard)
+    newBoard[index] = turn.token;
+    setBoard(newBoard);
+    if (turn.name === 'Amber') {
+      setTurn(player2);
+    } else {
+      setTurn(player1);
+    }
   }
   return (
     <div className='Box'>
