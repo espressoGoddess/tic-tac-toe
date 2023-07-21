@@ -1,10 +1,8 @@
-export default function Box({ value, setBoard, index, board, setTurn, turn, count, setCount}) {
+export default function Box({ value, setBoard, index, board, turn, count, setCount }) {
   const handleClick = () => {
-    console.log(turn)
-    const newBoard = [...board]
+    const newBoard = [...board];
     newBoard[index] = turn.token;
     setBoard(newBoard);
-    console.log(count)
     setCount(count+1);
   }
 
