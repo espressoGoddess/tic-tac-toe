@@ -21,12 +21,18 @@ export default function GameBoard({ turn, setTurn, player1, player2}) {
     );
   })
 
+  const resetBoard = () => {
+    setBoard(['', '', '', '', '', '', '', '', '']);
+    setTurn(player1)
+  }
+
   return (
     <section>
       <h1>{turn.name}'s turn</h1>
       <div className='GameBoard'>
         {boxes}
       </div>
+      <button onClick={resetBoard}>Reset Board</button>
     </section>
   );
 }
