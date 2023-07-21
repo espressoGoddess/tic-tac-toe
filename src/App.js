@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="App">
       <ScoreCard player={player1}/>
-      <GameBoard />
+      <GameBoard turn={turn} setTurn={setTurn}/>
       <ScoreCard player={player2}/>
     </main>
   );
