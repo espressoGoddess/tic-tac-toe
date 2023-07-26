@@ -44,9 +44,9 @@ export default function GameBoard({ player1, player2, onGameEnd, onGameReset, di
   }
 
   return (
-    <section>
-      {turn && !checkForWin(board) ? <h2>{turn.name}'s turn</h2> : null}
-      <div className='GameBoard'>
+    <section className="GameBoard">
+      {turn && !checkForWin(board) ? <h2 className="turn">{turn.name}'s turn</h2> : null}
+      <div className='boxes'>
         {boxes}
       </div>
       <button onClick={resetBoard}>Reset Board</button>

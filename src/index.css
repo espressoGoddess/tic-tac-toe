@@ -2,11 +2,11 @@
   width: 150px;
   height: 150px;
 }
-.GameBoard {
+.boxes {
   display:flex;
-  width: 500px;
+  width: 450px;
   flex-wrap: wrap;
-  padding: 150px;
+  padding: 50px 150px;
 }
 
 .App {
@@ -27,8 +27,21 @@
 
 .main {
   display: flex;
+  justify-content: center;
 }
 
 header {
+  text-align: center;
+}
+
+.turn {
+  text-align: center;
+}
+
+.winner {
+  text-align: center;
+}
+
+.GameBoard {
   text-align: center;
 }
