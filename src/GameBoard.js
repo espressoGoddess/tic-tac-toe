@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Box from "./Box";
 
-export default function GameBoard({ player1, player2, onGameEnd, disabled = false }) {
+export default function GameBoard({ player1, player2, onGameEnd, onGameReset, disabled = false }) {
 
   const [board, setBoard] = useState(['', '', '', '', '', '', '', '', '']);
   const [turn, setTurn] = useState(player1);
 
   const nextTurn = () => {
-    if (turn === player1) {
+    if (turn.name === player1.name) {
       setTurn(player2);
     }
     else {
@@ -40,12 +40,13 @@ export default function GameBoard({ player1, player2, onGameEnd, disabled = fals
 
   const resetBoard = () => {
     setBoard(['', '', '', '', '', '', '', '', '']);
+    onGameReset(null);
   }
 
   return (
-    <section>
-      <h1>{turn ? turn.name : null}</h1>
-      <div className='GameBoard'>
+    <section className="GameBoard">
+      {turn && !checkForWin(board) ? <h2 className="turn">{turn.name}'s turn</h2> : null}
+      <div className='boxes'>
         {boxes}
       </div>
       <button onClick={resetBoard}>Reset Board</button>

@@ -2,23 +2,46 @@
   width: 150px;
   height: 150px;
 }
-.GameBoard {
+.boxes {
   display:flex;
-  width: 500px;
+  width: 450px;
   flex-wrap: wrap;
-  padding: 150px;
+  padding: 50px 150px;
 }
 
 .App {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .box-value {
   width: 100%;
   height: 100%;
+  font-size: 120px;
 }
 
 .ScoreCard {
   margin-top: 50px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+}
+
+.turn {
+  text-align: center;
+}
+
+.winner {
+  text-align: center;
+}
+
+.GameBoard {
+  text-align: center;
 }
