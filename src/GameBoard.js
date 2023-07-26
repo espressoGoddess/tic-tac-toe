@@ -45,7 +45,7 @@ export default function GameBoard({ player1, player2, onGameEnd, onGameReset, di
 
   return (
     <section>
-      {turn ? <h2>{turn.name}'s turn</h2> : null}
+      {turn && !checkForWin(board) ? <h2>{turn.name}'s turn</h2> : null}
       <div className='GameBoard'>
         {boxes}
       </div>
