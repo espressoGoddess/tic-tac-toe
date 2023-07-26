@@ -1,27 +1,30 @@
 import GameBoard from "./GameBoard";
 import ScoreCard from "./ScoreCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
-  const [player1, setPlayer1] = useState({});
-  const [player2, setPlayer2] = useState({});
-  const [turn, setTurn] = useState({});
-  const [count, setCount] = useState(null);
+  const [player1, setPlayer1] = useState({name: 'Amber', score: 0, token: 'X'});
+  const [player2, setPlayer2] = useState({name: 'Nathan', score: 0, token: 'O'});
+  const [winner, setWinner] = useState(null);
 
-  useEffect(() => {
-    setPlayer1({name: 'Amber', score: 0, token: 'X'});
-    setPlayer2({name: 'Nathan', score: 0, token: 'O'});
-    setCount(0);
-  }, []);
 
-  useEffect(() => {
-    count % 2 ? setTurn(player2) : setTurn(player1);
-  }, [count])
+  const handleGameEnd = winnerToken => {
+    if (winnerToken === player1.token) {
+      setWinner(player1.name);
+      setPlayer1({...player1, score: player1.score + 1})
+    } else if (winnerToken === player2.token) {
+      setWinner(player2.name);
+      setPlayer2({...player2, score: player2.score + 1})
+    } else if(winnerToken === 'Draw') {
+      setWinner('Draw');
+    }
+  }
 
   return (
     <main className="App">
       <ScoreCard player={player1}/>
-      <GameBoard turn={turn} count={count} setCount={setCount}/>
+      {winner}
+      <GameBoard onGameEnd={handleGameEnd} player1={player1} player2={player2} disabled={winner} />
       <ScoreCard player={player2}/>
     </main>
   );
