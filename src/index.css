@@ -12,6 +12,7 @@
 .App {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .box-value {
@@ -22,4 +23,12 @@
 
 .ScoreCard {
   margin-top: 50px;
+}
+
+.main {
+  display: flex;
+}
+
+header {
+  text-align: center;
 }

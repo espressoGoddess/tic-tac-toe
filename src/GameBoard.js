@@ -44,7 +44,7 @@ export default function GameBoard({ player1, player2, onGameEnd, disabled = fals
 
   return (
     <section>
-      <h1>{turn ? turn.name : null}</h1>
+      {turn ? <h2>{turn.name}'s turn</h2> : null}
       <div className='GameBoard'>
         {boxes}
       </div>

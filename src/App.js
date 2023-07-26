@@ -10,13 +10,13 @@ function App() {
 
   const handleGameEnd = winnerToken => {
     if (winnerToken === player1.token) {
-      setWinner(player1.name);
+      setWinner(`${player1.name} wins`);
       setPlayer1({...player1, score: player1.score + 1})
     } else if (winnerToken === player2.token) {
-      setWinner(player2.name);
+      setWinner(`${player2.name} wins`);
       setPlayer2({...player2, score: player2.score + 1})
     } else if(winnerToken === 'Draw') {
-      setWinner('Draw');
+      setWinner('Draw, no one wins');
     }
   }
 
