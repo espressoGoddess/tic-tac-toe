@@ -7,7 +7,7 @@ export default function GameBoard({ player1, player2, onGameEnd, onGameReset, di
   const [turn, setTurn] = useState(player1);
 
   const nextTurn = () => {
-    if (turn === player1) {
+    if (turn.name === player1.name) {
       setTurn(player2);
     }
     else {
