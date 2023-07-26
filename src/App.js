@@ -3,8 +3,8 @@ import ScoreCard from "./ScoreCard";
 import { useState } from "react";
 
 function App() {
-  const [player1, setPlayer1] = useState({name: 'Amber', score: 0, token: 'X'});
-  const [player2, setPlayer2] = useState({name: 'Nathan', score: 0, token: 'O'});
+  const [player1, setPlayer1] = useState({name: 'Amber', score: 0, token: '🏜️'});
+  const [player2, setPlayer2] = useState({name: 'Nathan', score: 0, token: '🏍️'});
   const [winner, setWinner] = useState(null);
 
 
