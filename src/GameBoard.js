@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Box from "./Box";
 
-export default function GameBoard({ player1, player2, onGameEnd, disabled = false }) {
+export default function GameBoard({ player1, player2, onGameEnd, onGameReset, disabled = false }) {
 
   const [board, setBoard] = useState(['', '', '', '', '', '', '', '', '']);
   const [turn, setTurn] = useState(player1);
@@ -40,6 +40,7 @@ export default function GameBoard({ player1, player2, onGameEnd, disabled = fals
 
   const resetBoard = () => {
     setBoard(['', '', '', '', '', '', '', '', '']);
+    onGameReset(null);
   }
 
   return (

@@ -22,10 +22,15 @@ function App() {
 
   return (
     <main className="App">
-      <ScoreCard player={player1}/>
-      {winner}
-      <GameBoard onGameEnd={handleGameEnd} player1={player1} player2={player2} disabled={winner} />
-      <ScoreCard player={player2}/>
+      <header>
+        <h1>Tic Tac Toe</h1>
+      </header>
+      <div className="main">
+        <ScoreCard player={player1}/>
+        {winner}
+        <GameBoard onGameEnd={handleGameEnd} player1={player1} player2={player2} disabled={winner} onGameReset={setWinner}/>
+        <ScoreCard player={player2}/>
+      </div>
     </main>
   );
 }
